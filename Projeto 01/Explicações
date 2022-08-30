@@ -1,0 +1,30 @@
+Podemos criar aplicativos com React Native utilizando:
+- CLI
+- Expo Managed Worflows
+- Expo Bare Workflow
+
+Configurações de Ambiente para desenvolvimento React Native
+
+https://react-native.rocketseat.dev/expo-managed/windows
+
+Criando projetos com React Native e Expo
+
+expo init nameProject --npm (Utilizamos a flag para especificar qual gerenciador de pacotes deve ser utilizado)
+
+*NÃO MISTURE GERENCIADORES DE PACOTES*
+
+Neste projeto utlizaremos o 
+Expo Manged Workflow
+
+- expo cli estouAqui --npm
+- blank (TypeScript)
+
+*PONTOS DE ATENÇÃO NO DESENVOLVIMENTO MOBILE*
+- No caminho do usuário e no nome das pastas, não utilize caracteres especiais. 
+(Ex: C://Área de Trabalho/projeto)
+
+- Evite espaços em branco e caracteres especiais no nome do projeto. 
+(projetoUm, projetoDois, projetoTres)
+
+- Não crie seu projeto em pastas sincronizadas. 
+(OneDrive, GoogleDrive, DropBox - Use o GitHub)
