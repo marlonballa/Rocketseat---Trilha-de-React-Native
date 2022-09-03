@@ -111,3 +111,6 @@ Formas de conexão:
 - A propriedade deverá ser retornada dentro do componente utilizando o conceito de Props
 - Lembrando que a props deve ser passada como parâmetro no momento de criação do componente.
     {props.name}
+
+*ATIVANDO A ROLAGEM NA TELA*
+- Para ativar a rolagem na tela, devemos utilizar o componente ScrollView. 
