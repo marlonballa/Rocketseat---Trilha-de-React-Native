@@ -1,5 +1,7 @@
 //O Arquivo .tsx é o responsável pela estrutura do componente. 
 
+//Importando bibliotecas do React
+import { useState } from 'react';
 //Para utilizar elementos, precisamos importar eles na biblioteca. 
 import { Text, View, TextInput, TouchableOpacity, ScrollView, Alert} from 'react-native';
 //Importanto a folha de estilos
@@ -9,16 +11,25 @@ import { Participant } from '../../components/Participant';
 
 //A função App é a padrão para a inicialização
 export default function App() {
-//Responsável por armazenar os participantes
-const participants = ["Marlon", "Ana Laura", "Marcelle", "Sandra", "Sebastião", "Welinton", "Paulo", "Camila", "Itaide Balla", "Jesus Balla", "Marcelo", "Leandro", "Reginaldo", "Cislene", "Clara", "Toquinho", "Estéfano"]
+//Os estados devem ficar no topo do componente.
+/**Estrutura do Hook
+ * const (estadoAtual, atualizadorDoEstado) = useState(---)
+ */
+const [participants, setParticipants] = useState(["Marlon"])
 
   //Toda função possui um retorno. Aqui vamos retornar os elementos que queremos que apareçam na tela.
   //Todas as funções devem ser criadas dentro do escopo do componente.
   function handleParticipantAdd() {
-    if(participants.includes("Marlon")) {
+    if(participants.includes("Marlonnn")) {
       return Alert.alert("Eita, eita, eita!", "Já existe um participante na lista com este nome")
       /**Ao adicionarmos o return, ele para a execução da função */
     }
+
+    /**Responsável por alterar a lista de usuário. 
+     * currentState -> Armazena o valor atual do estado
+     * Cria um novo array com o novo estado
+     */
+    setParticipants(currentState => [...currentState, "Ana"])
   }
 
   function handleParticipantRemove(nameUser: string) {

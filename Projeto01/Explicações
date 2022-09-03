@@ -114,3 +114,15 @@ Formas de conexão:
 
 *ATIVANDO A ROLAGEM NA TELA*
 - Para ativar a rolagem na tela, devemos utilizar o componente ScrollView. 
+
+*REACT HOOKS*
+- Permite que você use estados e outros recursos do React sem escrever uma classe. 
+- Encapsula funcionalidades e facilita o reaproveitamento da sua lógica. 
+- Podemos usar Hooks prontos ou criar os nossos. 
+    - useEffect:
+        Dispara uma lógica quando a interface for renderizada ou houver alterações em um estado definido. 
+    - useState:
+        Responsável por criar e acessar estados
+    - Nome dos Hooks
+        useNewHook
+        - Foi criado para tornar a interface reativa, ou seja, identifica se houve alguma alteração nos componentes, caso exista, renderiza apenas aquele componente - mantendo a interface intecta. 
