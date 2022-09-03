@@ -12,8 +12,13 @@ export default function Home() {
   //Toda função possui um retorno. Aqui vamos retornar os elementos que queremos que apareçam na tela.
   //Todas as funções devem ser criadas dentro do escopo do componente.
   function handleParticipantAdd() {
-    console.log("Clicou")
+    console.log("Clicou em adicionar")
   }
+
+  function handleParticipantRemove(nameUser: string) {
+    console.log(`Clicou em remover o participante: ${nameUser}`)
+  }
+
   return (
     //Estilização por StyleSheet
     <View style={styles.container}>
@@ -37,11 +42,8 @@ export default function Home() {
             </Text>
           </TouchableOpacity>
         </View>
-        <Participant />
-        <Participant />
-        <Participant />
-        <Participant />
-        <Participant />
+        <Participant nameUser="Rodrigo faro" onRemove={() => handleParticipantRemove("Marlon")} />
+          {/*Criamos uma propriedade que usará uma function que está neste arquivo, mas será disparada quando o usuário clicar no componente (que está em outro lugar)*/}
     </View>
     //Quando o retorno for mais do que um elemento, o conteúdo deve estar dentro de uma View (equivalente a uma div).
     // <> </> Fragement: utilizado para embrulhar elementos. 

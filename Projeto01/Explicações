@@ -105,3 +105,9 @@ Formas de conexão:
 - Redução de Complexidade
 - Arquivos Menores
 - Padronização do Projeto
+
+*UTILIZANDO PROPRIEDADES NO COMPONENTE*
+<Componente propriedade={ } >
+- A propriedade deverá ser retornada dentro do componente utilizando o conceito de Props
+- Lembrando que a props deve ser passada como parâmetro no momento de criação do componente.
+    {props.name}
