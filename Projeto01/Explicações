@@ -1,0 +1,107 @@
+Podemos criar aplicativos com React Native utilizando:
+- CLI
+- Expo Managed Worflows
+- Expo Bare Workflow
+
+Configurações de Ambiente para desenvolvimento React Native
+
+https://react-native.rocketseat.dev/expo-managed/windows
+
+Criando projetos com React Native e Expo
+
+expo init nameProject --npm (Utilizamos a flag para especificar qual gerenciador de pacotes deve ser utilizado)
+
+*NÃO MISTURE GERENCIADORES DE PACOTES*
+
+Neste projeto utlizaremos o 
+Expo Manged Workflow
+
+- expo cli estouAqui --npm
+- blank (TypeScript)
+
+*PONTOS DE ATENÇÃO NO DESENVOLVIMENTO MOBILE*
+- No caminho do usuário e no nome das pastas, não utilize caracteres especiais. 
+(Ex: C://Área de Trabalho/projeto)
+
+- Evite espaços em branco e caracteres especiais no nome do projeto. 
+(projetoUm, projetoDois, projetoTres)
+
+- Não crie seu projeto em pastas sincronizadas. 
+(OneDrive, GoogleDrive, DropBox - Use o GitHub)
+
+Arquivos do Projeto: 
+    - App.tsx: Arquivo principal da aplicação. 
+    - babel.config: Responsável por fazer a transpilação do javascript em código nativo. 
+    - tsconfig.json: informações sobre o typescript. 
+
+*PARA EXECUTAR O PROJETO*
+- expo start ou npx expo start
+Formas de conexão: 
+    - Lan: O smartphone e o notebook devem estar na mesma rede. 
+    - Local: Quando o aplicativo rodará no emulador, no próprio ambiente de desenvolvimento. 
+    - Tunel: Para ambientes com redes protegidas. 
+
+*FUNCIONAMENTO DO REACT NATIVE*
+- Na abordagem tradicional de desenvolvimento, é necessário utilizar as linguagens nativas de cada plataforma, além de ter uma equipe para cada plataforma (o que dobra o nível de complexidade de manutenção da aplicação). 
+
+- Abordagem CrossPlataform:
+    - Uma base de código, utilizando JavaScript, que pode ser compartilhada para Android ou IOS. 
+    - O código em javascript passa por um processo de encapsulamento que gera o bundle da aplicação.
+        - O bundle constrói a interface de acordo com o ambiente em que será executado. Utilizando interface declarativa (JSX), ou seja, tudo o que construímos com JavaScript independe do ambiente em que a interface será executada.
+
+- Refresh and Reload
+    - As alterações feitas no código são apresentadas no projeto em tempo real. 
+
+- O que é o JSX
+   JSX: É a sintaxe utilizada pelo React para criar interfaces de forma declarativa. 
+   A biblioteca React têm foco em construção de interfaces. Enquanto o React Native disponibiliza os elementos do mundo mobile para serem utilizados por essa bibliotca. 
+
+- Paradigma Funcional e Componentização
+    - O React utiliza o paradigma Funcional, ou seja, componentes e interfaces são sinônimos. O que facilita a vida, pois podemos reutilizar os componentes. 
+
+*ENTENDO A LOGBOX*
+- Warning: Erros que não quebram a aplicação
+- Errors: Erros que quebram a aplicação. 
+
+*ESTILIZANDO ELEMENTOS*
+- Utilizando a propriedade Style:
+    <Text style={{backgroundColor: '#131016'}}>
+    O atributo Style recebe como conteúdo objetos, por isso utilizamos chaves em sua abertura. 
+- A estilização no React Native é muito parecida com a estilização de elementos web. A diferença é que utilizamos o camelCase e o flexbox é o display padrão.
+- Utilizando o StyleSheet:
+    Importamos o StyleSheets na biblioteca React
+    Ao final do código temos que criar uma constante que receberá as informações de estilo de cada elemento. 
+    - A estilização fica separada dos elementos.
+- Estilização Externa
+    - Criar uma pasta src (que armazenará arquivos criados por nós)
+    - Dentro da pasta SRC vamos criar a pasta Screen e dentro da pasta Screen criaremos as pastas que guardam as informações de cada tela da nossa aplicação. 
+        - Cada tela deve conter dois arquivos:
+            - index.tsx
+            (Arquivo do componente, criado em TypeScript)
+            - styles.ts (Que armazenará as informações de estilização)
+
+*ENTENDENDO DENSIDADE DE PIXEL*
+- No React Native não utilizamos uma unidade de medida para identificar o tamanho de elementos. 
+- Pixel de Hardware
+    Ponto de luz na tela. 
+- Pixel de Software
+    Dinâmico e de acordo com a densidade de pixels na tela. (PPI)
+- Independência de Densidade
+    Como cada tela possui caracteristicas próprias, ou seja, tamanho e quantidade de pixels variados. Desenvolveram a "independência de Densidade", ou seja, renderiza o elemento de forma idependente das características e densidade de cada dispositivo. 
+        Android: DPI
+        IOS: Points
+
+*AS DIFERENÇAS ENTRE EXPORT E EXPORT DEFAULT*
+- export: Permite a exportação de vários elementos.
+    import { elemento } from 'caminho'
+- export default: força a exportação de um elemento especifíco. 
+    import elemento from 'caminho'
+
+*BENEFÍCIOS DA COMPONENTIZAÇÃO*
+- Reutilização de Código
+- Produtividade
+- Isolamento de Contexto
+- Legibilidade de Código
+- Redução de Complexidade
+- Arquivos Menores
+- Padronização do Projeto
