@@ -15,12 +15,12 @@ export default function App() {
 /**Estrutura do Hook
  * const (estadoAtual, atualizadorDoEstado) = useState(---)
  */
-const [participants, setParticipants] = useState(["Marlon"])
-
+const [participants, setParticipants] = useState<string[]>([])
+const [participantName, setParticipantName] = useState('')
   //Toda função possui um retorno. Aqui vamos retornar os elementos que queremos que apareçam na tela.
   //Todas as funções devem ser criadas dentro do escopo do componente.
   function handleParticipantAdd() {
-    if(participants.includes("Marlonnn")) {
+    if(participants.includes(participantName)) {
       return Alert.alert("Eita, eita, eita!", "Já existe um participante na lista com este nome")
       /**Ao adicionarmos o return, ele para a execução da função */
     }
@@ -29,7 +29,9 @@ const [participants, setParticipants] = useState(["Marlon"])
      * currentState -> Armazena o valor atual do estado
      * Cria um novo array com o novo estado
      */
-    setParticipants(currentState => [...currentState, "Ana"])
+    setParticipants(currentState => [...currentState, participantName]);
+    /**Limpa o que foi inserido pelo usuário */
+    setParticipantName('');
   }
 
   function handleParticipantRemove(nameUser: string) {
@@ -60,6 +62,12 @@ const [participants, setParticipants] = useState(["Marlon"])
               style={styles.input}
               placeholder="Digite"
               placeholderTextColor="#b0b3b8"
+              /**O conteúdo digitado neste input fica dentro de um evento no método onChangeText 
+              onChangeText = {setParticipantName(newParticipant)}
+               * Forma resumida: 
+              */ 
+              onChangeText={newParticipant => setParticipantName(newParticipant)}
+              value={participantName}
           />
           {/*Criando um botão. *Elementos de texto devem sempre estar encapsulados por Text*/}
           <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>

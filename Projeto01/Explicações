@@ -126,3 +126,24 @@ Formas de conexão:
     - Nome dos Hooks
         useNewHook
         - Foi criado para tornar a interface reativa, ou seja, identifica se houve alguma alteração nos componentes, caso exista, renderiza apenas aquele componente - mantendo a interface intecta. 
+
+*O CONCEITO DE IMUTABILIDADE*
+- Todos os componentes são imutáveis, ou seja, não podem ser alterados. 
+Ou seja, sempre que existir modificações em um componente, ele é considerado um novo componente o que reflete em uma nova renderização deste elemento na tela. 
+
+*RENDERIZAÇÃO DE COMPONENTES*
+- O que é o Render?
+    Antes de serem exibidos na tela, os componentes devem ser renderizados pelo React. 
+    Objetivo do React: Construção de Interfaces.
+    Ou seja, Render é o processo de construção da interface de uma aplicação. 
+
+    Etapas: Acionar -> Renderizar -> Comprometer-se (Entregar o resultado para o cliente - Web/Mobile/Desktop)
+        - Acionar: Razões para um componente iniciar o processo de renderização.
+            Quando o aplicativo é iniciado ou a renderização inicial é acionada
+            Quando o estado do componente mudou
+        - Renderizar: Apresentar o componente na tela, identificando se é a primeira inicialização do aplicativo ou uma re-renderização do componente. 
+        - Comprometer-se: Confirmar as alterações no componente e na DOM.
+            Inicial: O React usará a API DOM para colocar todos os nós DOM criados na tela. 
+            Re-renderizações: O react aplicará as alterações minímas necessárias (calculadas durante a renderização) para fazer o DOM corresponder à saída de renderização mais recente. 
+        
+        O  REACT SÓ ALTERA OS NÓS DOM SE HOUVER UMA DIFERENÇA ENTRE AS RENDERIZAÇÕES. 
