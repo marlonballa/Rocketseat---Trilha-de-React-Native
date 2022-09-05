@@ -35,10 +35,12 @@ const [participantName, setParticipantName] = useState('')
   }
 
   function handleParticipantRemove(nameUser: string) {
+    //Responsável por deletar o participante da lista.
+
     Alert.alert("1,2,3... Já era!", `Deseja mesmo remover ${nameUser}?`, [
       {
         text: "Quero",
-        onPress: () => Alert.alert("Esse já era!")
+        onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== nameUser))
       }, 
       {
         text: "Pensei melhor",
